@@ -1,3 +1,9 @@
+variable  "region" {
+  default     = "ap-southeast-2"
+  description = "aws region"
+  type        = string
+}
+
 variable "cluster_enabled_log_types" {
   default     = []
   description = "A list of the desired control plane logging to enable. For more information, see Amazon EKS Control Plane Logging documentation (https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html)"
