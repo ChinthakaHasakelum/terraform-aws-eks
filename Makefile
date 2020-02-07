@@ -21,7 +21,7 @@ plan:  ## Terraform Plan
 
 apply:  ## Terraform Apply
 	@echo "Applying"
-	bash -c "terraform apply -auto-approve -parallelism=5 && terraform output --json > ../test/unit/spec/output.json"
+	bash -c "cd module && terraform apply -auto-approve -parallelism=5 && terraform output --json > ../test/output.json"
 
 .DEFAULT_GOAL := all
 .PHONY: all destroy plan apply test
