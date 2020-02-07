@@ -23,6 +23,7 @@ variable "cluster_log_retention_in_days" {
 variable "cluster_name" {
   description = "Name of the EKS cluster. Also used as a prefix in names of related resources."
   type        = string
+  default     = "sample"
 }
 
 variable "cluster_security_group_id" {
@@ -86,6 +87,7 @@ variable "map_users" {
 variable "subnets" {
   description = "A list of subnets to place the EKS cluster and workers within."
   type        = list(string)
+  default     = ["subnet-08a431f0422f22b28","subnet-010ca4a58fa8e7b21"]
 }
 
 variable "tags" {
@@ -97,17 +99,19 @@ variable "tags" {
 variable "vpc_id" {
   description = "VPC where the cluster and workers will be deployed."
   type        = string
+  default     = "vpc-0a54bf6b92a91e9d0"
 }
 
 variable "bastion_security_group_id" {
   description = "Security group id of the bastion instance. This is used to allow ingress to cluster API when private endpoint is enabled"
   type        = string
+  default     = "sg-0cff9d4205e3e85dd"
 }
 
 variable "worker_groups" {
   description = "A list of maps defining worker group configurations to be defined using AWS Launch Configurations. See workers_group_defaults for valid keys."
   type        = any
-  default     = []
+  default     = [{"name"="worker-1"}]
 }
 
 variable "workers_group_defaults" {
