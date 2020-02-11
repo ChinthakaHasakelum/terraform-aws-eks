@@ -4,7 +4,7 @@ resource "null_resource" "calico" {
   provisioner "local-exec" {
     working_dir = path.module
     command = <<EOS
-       kubectl apply -f https://docs.projectcalico.org/v3.8/manifests/calico.yaml
+       kubectl apply -f ${path.module}/files/calico.yaml
     EOS
 
     interpreter = var.local_exec_interpreter
