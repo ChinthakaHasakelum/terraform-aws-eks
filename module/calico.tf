@@ -6,6 +6,8 @@ resource "null_resource" "calico" {
     command = <<EOS
        kubectl apply -f https://docs.projectcalico.org/v3.8/manifests/calico.yaml
     EOS
+
+    interpreter = var.local_exec_interpreter
   }
 
   depends_on = [aws_eks_cluster.this]
