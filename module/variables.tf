@@ -52,13 +52,13 @@ variable "eks_ami_account_id" {
 variable "config_output_path" {
   description = "Where to save the Kubectl config file (if `write_kubeconfig = true`). Should end in a forward slash `/` ."
   type        = string
-  default     = "./../../../conf/"
+  default     = "~/.aws/"
 }
 
 variable "write_kubeconfig" {
   description = "Whether to write a Kubectl config file containing the cluster configuration. Saved to `config_output_path`."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "manage_aws_auth" {
