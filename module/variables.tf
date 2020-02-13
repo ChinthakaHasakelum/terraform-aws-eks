@@ -58,7 +58,7 @@ variable "config_output_path" {
 variable "write_kubeconfig" {
   description = "Whether to write a Kubectl config file containing the cluster configuration. Saved to `config_output_path`."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "manage_aws_auth" {
